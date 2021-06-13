@@ -572,6 +572,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
+  rotationSmoothTime: 0.1
+  jumpSpeed: 5
+  fallSpeed: -7
+  jumpTime: 1
+  groundedDistance: 0.2
 --- !u!114 &391287635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -584,6 +589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57ee67c0454765244a5f1390a27975ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpKey: space
 --- !u!114 &391287636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -841,8 +847,10 @@ MonoBehaviour:
   cameraPivot: {fileID: 1348200740}
   distanceFromPivot: 10
   mouseSensitivity: 10
+  positionSmoothTime: 0.01
   pitchMin: -40
   pitchMax: 40
+  rotationSmoothTime: 0.1
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0

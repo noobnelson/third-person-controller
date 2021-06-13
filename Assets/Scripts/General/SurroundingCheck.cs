@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SurroundingCheck : MonoBehaviour
 {
-    private float minPosY;
-    private float maxPosY;
-    private float minPosX;
-    private float maxPosX;
-    private float minPosZ;
-    private float maxPosZ;
+    internal float minPosY;
+    internal float maxPosY;
+    internal float minPosX;
+    internal float maxPosX;
+    internal float minPosZ;
+    internal float maxPosZ;
 
     [SerializeField]
     private List<int> checkLayers = new List<int>();
@@ -30,7 +30,8 @@ public class SurroundingCheck : MonoBehaviour
     
     private float maxPositive = 9999f;
     private float maxNegative = -9999f;
-
+    private float limitCheckDistance = 99f;
+    
     void Awake()
     {
         foreach (int layer in checkLayers)
@@ -57,7 +58,7 @@ public class SurroundingCheck : MonoBehaviour
     float LimitCheck(Vector3 direction, int axis)
     {
         RaycastHit hit;
-        if (Physics.Raycast(checkPosition, direction, out hit, 99, combinedMask))
+        if (Physics.Raycast(checkPosition, direction, out hit, limitCheckDistance, combinedMask))
         {
             return hit.point[axis];
         }
